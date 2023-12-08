@@ -1,33 +1,10 @@
 const vscode = require('vscode');
 const fs = require('fs').promises;
 
-const tagPairs = [
-	['div', 'p'],
-	['div', 'span'],
-	['div', 'h1'],
-	['ul', 'li'],
-	['li', 'p'],
-	['li', 'a'],
-  ];
-
-
-//   async function readData() {
-// 	try {
-// 	  const data = await fs.readFile('../../data.json', 'utf8');
-// 	  const dataObject = JSON.parse(data);
-// 	  // Use dataObject here
-// 	  console.log(dataObject);
-// 	} catch (err) {
-// 	  console.error(err);
-// 	}
-//   }
-//   readData()
-
 /**
  * @param {vscode.ExtensionContext} context
  */
 async function activate(context) {
-	// const tagPairs = readData();
 	let associationRules;
     try {
         const data = await fs.readFile('/Users/muneebmuhammad/Documents/Assignments/Data Warehousing/Project/design_generator/auto-design-generator/data.json', 'utf8');
@@ -53,17 +30,17 @@ async function activate(context) {
 
 			if (match) {
 			  const parentTag = match[1];
-			  const suggestions = tagPairs.filter((pair) => pair[0] === parentTag).map((pair) => pair[1]);
-			  const newSuggestions = associationRules.filter((pair) => pair['antecedents'].includes(parentTag)).map((pair) => pair['consequents']);
-				console.log("new suggestions:", newSuggestions)
-			  if (suggestions.length>0){
-				vscode.window.showQuickPick(suggestions).then((tag) => {
+			  const newSuggestions = new Set(associationRules.filter((pair) => pair['antecedents'].includes(parentTag)).map((pair) => pair['consequents']).map(subArray => subArray.join(',')));
+			  const tagsSuggests = Array.from(newSuggestions)
+			  console.log("set suggestions:", tagsSuggests)
+			  if (tagsSuggests.length>0){
+				vscode.window.showQuickPick(tagsSuggests).then((tag) => {
 					if (tag) {
-					//   newSuggestions.forEach(element => {
-					// 	console.log()
-					// 	editor.insertSnippet(new vscode.SnippetString(`${element}></${element}>`), position);
-					//   });
-					  editor.insertSnippet(new vscode.SnippetString(`${tag}></${tag}>`), position);
+					console.log("tag is:", tag)
+					let tagsString = tag.split(',')
+					.map(tag => `<${tag}></${tag}>`)
+					.join('\n');
+					editor.insertSnippet(new vscode.SnippetString(tagsString.slice(1,tagsString.length)), position);
 					}
 				  });
 			  }
