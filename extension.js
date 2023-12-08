@@ -22,9 +22,6 @@ async function activate(context) {
 		  console.log("text new", document.lineAt(position).text[(document.lineAt(position).text.length)-1]);
 		  if (document.lineAt(position).text[(document.lineAt(position).text.length)-1] === '<') {
 			console.log("recommend now")
-			const currentLine = document.lineAt((position.line)-1).text;
-			const tagRegex = /<(\w+)>/;
-			const match = tagRegex.exec(currentLine);
 
 
 
@@ -61,8 +58,9 @@ async function activate(context) {
 			// Create a set for the new suggestions
 			let newSuggestions = new Set();
 
+			let confidenceMap = new Map();
+
 			// Function to check if all elements of 'subset' are in 'set'
-			// const isSubset = (set, subset) => subset.every(element => set.includes(element));
 			const isSubset = (set, subset) => {
 				// Create Sets from arrays to eliminate duplicates and ignore order
 				const setUnique = new Set(set);
@@ -79,13 +77,10 @@ async function activate(context) {
 					if (isSubset(rule['antecedents'], lastThreeTags) || 
 						isSubset(rule['antecedents'], lastThreeTags.slice(-2)) ||
 						rule['antecedents'] == lastThreeTags[lastThreeTags.length - 1]) {
-						// Add the corresponding consequents to the newSuggestions set
-						// newSuggestions.add(rule['consequents'].map(subArray => subArray.join(',')))
-						newSuggestions.add(rule['consequents'].join(','))
-						// rule['consequents'].forEach(consequent => {
-						// 	console.log("consequent is:", consequent)
-						// 	newSuggestions.add(consequent.join(','));
-						// });
+						const consequentsKey = rule['consequents'].join(',');
+						newSuggestions.add(consequentsKey)
+						// Store the confidence for each consequents
+						confidenceMap.set(consequentsKey, rule['confidence']);
 					}
 			});
 		}
@@ -93,17 +88,12 @@ async function activate(context) {
 			console.log("error is:", e)
 		}
 
-			const tagsSuggests = Array.from(newSuggestions);
+			// Convert the set to an array and sort it based on confidence
+			console.log("confidence map:", confidenceMap)
+			const tagsSuggests = Array.from(newSuggestions)
+			.sort((a, b) => confidenceMap.get(b) - confidenceMap.get(a));
 			console.log("set suggestions for last three tags:", tagsSuggests);
 
-
-
-			
-			// if (match) {
-			//   const parentTag = match[1];
-			//   const newSuggestions = new Set(associationRules.filter((pair) => pair['antecedents'].includes(parentTag)).map((pair) => pair['consequents']).map(subArray => subArray.join(',')));
-			//   const tagsSuggests = Array.from(newSuggestions)
-			//   console.log("one set suggestions:", tagsSuggests)
 			  if (tagsSuggests.length>0){
 				vscode.window.showQuickPick(tagsSuggests).then((tag) => {
 					if (tag) {
