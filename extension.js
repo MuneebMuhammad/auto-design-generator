@@ -1,9 +1,6 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const fs = require('fs');
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+const fs = require('fs').promises;
+
 const tagPairs = [
 	['div', 'p'],
 	['div', 'span'],
@@ -13,23 +10,33 @@ const tagPairs = [
 	['li', 'a'],
   ];
 
-fs.readFile('../../data.json', 'utf8', (err, data) => {
-if (err) {
-	console.error(err);
-	return;
-}
 
-// Parse the CSV data into a JavaScript object
-const dataObject = JSON.parse(data);
-
-// Display the data in the console
-// console.log(dataObject);
-});
+//   async function readData() {
+// 	try {
+// 	  const data = await fs.readFile('../../data.json', 'utf8');
+// 	  const dataObject = JSON.parse(data);
+// 	  // Use dataObject here
+// 	  console.log(dataObject);
+// 	} catch (err) {
+// 	  console.error(err);
+// 	}
+//   }
+//   readData()
 
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
+async function activate(context) {
+	// const tagPairs = readData();
+	let associationRules;
+    try {
+        const data = await fs.readFile('/Users/muneebmuhammad/Documents/Assignments/Data Warehousing/Project/design_generator/auto-design-generator/data.json', 'utf8');
+        associationRules = JSON.parse(data);
+    } catch (err) {
+        console.error("Error reading data.json:", err);
+        return; // Exit the activation function if there's an error
+    }
+	console.log("tag paris:", associationRules)
 	console.log("muneeb")
 	context.subscriptions.push(
 		vscode.window.onDidChangeTextEditorSelection((event) => {
@@ -47,9 +54,15 @@ function activate(context) {
 			if (match) {
 			  const parentTag = match[1];
 			  const suggestions = tagPairs.filter((pair) => pair[0] === parentTag).map((pair) => pair[1]);
+			  const newSuggestions = associationRules.filter((pair) => pair['antecedents'].includes(parentTag)).map((pair) => pair['consequents']);
+				console.log("new suggestions:", newSuggestions)
 			  if (suggestions.length>0){
 				vscode.window.showQuickPick(suggestions).then((tag) => {
 					if (tag) {
+					//   newSuggestions.forEach(element => {
+					// 	console.log()
+					// 	editor.insertSnippet(new vscode.SnippetString(`${element}></${element}>`), position);
+					//   });
 					  editor.insertSnippet(new vscode.SnippetString(`${tag}></${tag}>`), position);
 					}
 				  });
@@ -59,25 +72,8 @@ function activate(context) {
 		  }
 		})
 	  );
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	// console.log('Congratulations, your extension "auto-design-generator" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	// let disposable = vscode.commands.registerCommand('auto-design-generator.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-	// 	vscode.window.showInformationMessage('Hello World from auto-design-generator!');
-	// });
-
-	// context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
 function deactivate() {}
 
 module.exports = {

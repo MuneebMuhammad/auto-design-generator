@@ -1,0 +1,457 @@
+[
+    {
+        "antecedents": [
+            "Title"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.016436309301456856,
+        "confidence": 0.6518518518518519
+    },
+    {
+        "antecedents": [
+            "h4"
+        ],
+        "consequents": [
+            "a"
+        ],
+        "support": 0.04090399701158013,
+        "confidence": 0.5128805620608899
+    },
+    {
+        "antecedents": [
+            "h5"
+        ],
+        "consequents": [
+            "a"
+        ],
+        "support": 0.011953679491968622,
+        "confidence": 0.8205128205128206
+    },
+    {
+        "antecedents": [
+            "strong"
+        ],
+        "consequents": [
+            "a"
+        ],
+        "support": 0.010459469555472544,
+        "confidence": 0.5185185185185185
+    },
+    {
+        "antecedents": [
+            "h2"
+        ],
+        "consequents": [
+            "div"
+        ],
+        "support": 0.03698169592827792,
+        "confidence": 0.5561797752808989
+    },
+    {
+        "antecedents": [
+            "h1"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.01288756070227867,
+        "confidence": 0.5307692307692308
+    },
+    {
+        "antecedents": [
+            "title"
+        ],
+        "consequents": [
+            "h3"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 0.504
+    },
+    {
+        "antecedents": [
+            "h4"
+        ],
+        "consequents": [
+            "p"
+        ],
+        "support": 0.0423982069480762,
+        "confidence": 0.5316159250585479
+    },
+    {
+        "antecedents": [
+            "i18n-string"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.022413149047441166,
+        "confidence": 0.625
+    },
+    {
+        "antecedents": [
+            "label"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.047067612999626446,
+        "confidence": 0.6702127659574468
+    },
+    {
+        "antecedents": [
+            "input"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.11038475905864774,
+        "confidence": 0.616266944734098
+    },
+    {
+        "antecedents": [
+            "title"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.02073216286888308,
+        "confidence": 0.888
+    },
+    {
+        "antecedents": [
+            "strong"
+        ],
+        "consequents": [
+            "p"
+        ],
+        "support": 0.011019798281658572,
+        "confidence": 0.5462962962962963
+    },
+    {
+        "antecedents": [
+            "title"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.017183414269704895,
+        "confidence": 0.7360000000000001
+    },
+    {
+        "antecedents": [
+            "button",
+            "h4"
+        ],
+        "consequents": [
+            "a"
+        ],
+        "support": 0.022413149047441166,
+        "confidence": 0.8955223880597015
+    },
+    {
+        "antecedents": [
+            "h4",
+            "a"
+        ],
+        "consequents": [
+            "button"
+        ],
+        "support": 0.022413149047441166,
+        "confidence": 0.547945205479452
+    },
+    {
+        "antecedents": [
+            "div",
+            "h4"
+        ],
+        "consequents": [
+            "a"
+        ],
+        "support": 0.01288756070227867,
+        "confidence": 0.5948275862068966
+    },
+    {
+        "antecedents": [
+            "button",
+            "h2"
+        ],
+        "consequents": [
+            "div"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 0.7
+    },
+    {
+        "antecedents": [
+            "button",
+            "label"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 0.5478260869565217
+    },
+    {
+        "antecedents": [
+            "div",
+            "h4"
+        ],
+        "consequents": [
+            "p"
+        ],
+        "support": 0.015689204333208816,
+        "confidence": 0.7241379310344828
+    },
+    {
+        "antecedents": [
+            "input",
+            "div"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.020918939110945087,
+        "confidence": 0.5894736842105264
+    },
+    {
+        "antecedents": [
+            "input",
+            "h3"
+        ],
+        "consequents": [
+            "title"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 0.7974683544303798
+    },
+    {
+        "antecedents": [
+            "input",
+            "title"
+        ],
+        "consequents": [
+            "h3"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 0.5675675675675675
+    },
+    {
+        "antecedents": [
+            "h3",
+            "title"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 1.0
+    },
+    {
+        "antecedents": [
+            "title"
+        ],
+        "consequents": [
+            "input",
+            "h3"
+        ],
+        "support": 0.011766903249906611,
+        "confidence": 0.504
+    },
+    {
+        "antecedents": [
+            "input",
+            "h4"
+        ],
+        "consequents": [
+            "p"
+        ],
+        "support": 0.021105715353007096,
+        "confidence": 0.7583892617449665
+    },
+    {
+        "antecedents": [
+            "input",
+            "p"
+        ],
+        "consequents": [
+            "h4"
+        ],
+        "support": 0.021105715353007096,
+        "confidence": 0.5916230366492147
+    },
+    {
+        "antecedents": [
+            "input",
+            "h4"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.02558834516249533,
+        "confidence": 0.9194630872483223
+    },
+    {
+        "antecedents": [
+            "span",
+            "h4"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.02558834516249533,
+        "confidence": 0.8509316770186336
+    },
+    {
+        "antecedents": [
+            "span",
+            "h4"
+        ],
+        "consequents": [
+            "p"
+        ],
+        "support": 0.021666044079193127,
+        "confidence": 0.7204968944099379
+    },
+    {
+        "antecedents": [
+            "h4",
+            "p"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.021666044079193127,
+        "confidence": 0.5110132158590309
+    },
+    {
+        "antecedents": [
+            "input",
+            "p"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.02577512140455734,
+        "confidence": 0.7225130890052357
+    },
+    {
+        "antecedents": [
+            "input",
+            "title"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.015875980575270825,
+        "confidence": 0.7657657657657657
+    },
+    {
+        "antecedents": [
+            "span",
+            "title"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.015875980575270825,
+        "confidence": 0.9239130434782608
+    },
+    {
+        "antecedents": [
+            "title"
+        ],
+        "consequents": [
+            "input",
+            "span"
+        ],
+        "support": 0.015875980575270825,
+        "confidence": 0.68
+    },
+    {
+        "antecedents": [
+            "input",
+            "span",
+            "h4"
+        ],
+        "consequents": [
+            "p"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.7664233576642336
+    },
+    {
+        "antecedents": [
+            "input",
+            "span",
+            "p"
+        ],
+        "consequents": [
+            "h4"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.7608695652173914
+    },
+    {
+        "antecedents": [
+            "input",
+            "h4",
+            "p"
+        ],
+        "consequents": [
+            "span"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.929203539823009
+    },
+    {
+        "antecedents": [
+            "span",
+            "h4",
+            "p"
+        ],
+        "consequents": [
+            "input"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.9051724137931035
+    },
+    {
+        "antecedents": [
+            "input",
+            "h4"
+        ],
+        "consequents": [
+            "span",
+            "p"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.7046979865771813
+    },
+    {
+        "antecedents": [
+            "input",
+            "p"
+        ],
+        "consequents": [
+            "span",
+            "h4"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.549738219895288
+    },
+    {
+        "antecedents": [
+            "span",
+            "h4"
+        ],
+        "consequents": [
+            "input",
+            "p"
+        ],
+        "support": 0.01961150541651102,
+        "confidence": 0.6521739130434783
+    }
+]
