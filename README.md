@@ -1,4 +1,4 @@
-# auto-design-generator README
+# Auto Design Generator
 
 This is the README for your extension "auto-design-generator". After writing up a brief description, we recommend including the following sections.
 
