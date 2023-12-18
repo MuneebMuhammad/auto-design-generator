@@ -14,10 +14,16 @@
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "auto-design-generator.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "auto-design-generator.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "extension.showStreamlitDashboard",
+        "title": "Show Code Analytics Dashboard"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",

@@ -1,22 +1,27 @@
+
+////////////////////////////////////////////////////////
+
 const vscode = require('vscode');
+const { exec } = require('child_process');
 const fs = require('fs').promises;
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 async function activate(context) {
-	let associationRules;
+    let associationRules;
     try {
-        const data = await fs.readFile('/Users/muneebmuhammad/Documents/Assignments/Data Warehousing/Project/design_generator/auto-design-generator/data.json', 'utf8');
+        // Replace with your actual data.json file path
+        const data = await fs.readFile('D:\\Dawood_Work\\Sem_7\\DWDM\\Project\\auto-design-generator\\data.json', 'utf8');
         associationRules = JSON.parse(data);
     } catch (err) {
         console.error("Error reading data.json:", err);
         return; // Exit the activation function if there's an error
     }
-	console.log("tag paris:", associationRules)
-	context.subscriptions.push(
-		vscode.window.onDidChangeTextEditorSelection((event) => {
-		  const editor = event.textEditor;
+
+    context.subscriptions.push(
+        vscode.window.onDidChangeTextEditorSelection((event) => {
+            const editor = event.textEditor;
 		  const document = editor.document;
 		  const position = editor.selection.start;
 		  console.log("text new", document.lineAt(position).text[(document.lineAt(position).text.length)-1]);
@@ -108,13 +113,40 @@ async function activate(context) {
 			  
 			// }
 		  }
-		})
-	  );
+        })
+    );
+
+    // Command to open Streamlit Dashboard
+    let disposable = vscode.commands.registerCommand('extension.showStreamlitDashboard', function () {
+        const editor = vscode.window.activeTextEditor;
+        if (editor) {
+            const filePath = editor.document.fileName;
+
+            // Replace 'path/to/your/streamlit_script.py' with the actual path to your Streamlit script
+            const command = `streamlit run D:\\Dawood_Work\\Sem_7\\DWDM\\Project\\auto-design-generator\\dashboard_script.py "${filePath}"`;
+
+            exec(command, (err, stdout, stderr) => {
+                if (err) {
+                    vscode.window.showErrorMessage(`Error: ${err.message}`);
+                    return;
+                }
+                if (stderr) {
+                    vscode.window.showErrorMessage(`Error: ${stderr}`);
+                    return;
+                }
+                vscode.window.showInformationMessage('Streamlit dashboard is running');
+            });
+        } else {
+            vscode.window.showErrorMessage('No active editor found');
+        }
+    });
+
+    context.subscriptions.push(disposable);
 }
 
 function deactivate() {}
 
 module.exports = {
-	activate,
-	deactivate
-}
+    activate,
+    deactivate
+};

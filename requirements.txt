@@ -1,0 +1,7 @@
+beautifulsoup4
+matplotlib
+wordcloud
+pandas
+seaborn
+streamlit
+networkx
