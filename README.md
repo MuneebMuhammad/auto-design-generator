@@ -1,65 +1,79 @@
-# Auto Design Generator
+# Auto Design Generator VS Code Extension
 
-This is the README for your extension "auto-design-generator". After writing up a brief description, we recommend including the following sections.
+The Auto Design Generator VS Code extension provides a convenient way to generate code snippets based on your current HTML file. It also offers a feature to view statistics and visualizations of the code written so far.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Features](#features)
+  - [Code Snippet Generation](#code-snippet-generation)
+  - [Viewing Statistics](#viewing-statistics)
+- [Usage](#usage)
+  - [Generating Code Snippets](#generating-code-snippets)
+  - [Viewing Statistics Dashboard](#viewing-statistics-dashboard)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Getting Started
+
+### Prerequisites
+
+Before you can use this extension, ensure that you have the following prerequisites installed:
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+### Installation
+
+Follow these steps to install the Auto Design Generator extension:
+
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for "Auto Design Generator" in the Extensions view search box.
+4. Click the Install button for the "Auto Design Generator" extension.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Code Snippet Generation
 
-For example if there is an image subfolder under your extension project workspace:
+The Auto Design Generator extension allows you to generate code snippets based on the tags in your HTML file. Here's how to use this feature:
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open an HTML file in Visual Studio Code.
+2. Place the cursor at the location where you want to insert a code snippet.
+3. Start typing a tag, e.g., `<div>`.
+4. As you type the opening `<`, the extension will automatically suggest closing tags for you.
+5. Select a closing tag from the suggestions, and it will insert both the opening and closing tags.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+**Example:**
 
-## Requirements
+```html
+<!-- Type '<div>' -->
+<!-- Extension suggests '</div>' -->
+<!-- Select the suggestion, and it inserts '<div></div>' -->
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Viewing Statistics
+The extension also provides a feature to view statistics and visualizations of the code in your HTML file. This feature is accessible through a separate web dashboard. Follow these steps to view statistics:
 
-## Extension Settings
+1. Open the HTML file you want to analyze in Visual Studio Code.
+2. Ensure that the file is saved with a .html extension.
+3. Click on the "View Statistics" button in the VS Code status bar.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+**Viewing Statistics Dashboard**
 
-For example:
+To view statistics and visualizations of your HTML code, use the following steps:
 
-This extension contributes the following settings:
+1. Ensure your HTML file is saved with a .html extension.
+2. Click on the "View Statistics" button in the VS Code status bar.
+3. The extension will open a web dashboard in your default browser.
+4. The dashboard will display statistics such as tag frequency, word cloud, and more.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+1. Fork the project.
+2. Create a new branch for your feature or bug fix (git checkout -b feature/awesome-feature).
+3. Make your changes and commit them (git commit -m 'Add some feature').
+4. Push your changes to the branch (git push origin feature/awesome-feature).
+5. Open a pull request.
+ 
