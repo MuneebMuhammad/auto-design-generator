@@ -1,6 +1,6 @@
-# Auto Design Generator VS Code Extension
+# Auto-Design VS Code Extension
 
-The Auto Design Generator VS Code extension is designed to assist web developers by providing advanced code snippet generation and code analytics features for HTML files. It leverages association rule mining to recommend HTML tags based on your coding patterns and offers a comprehensive code analytics dashboard.
+The Auto-Design VS Code extension is designed to assist web developers by providing advanced code snippet generation and code analytics features for HTML files. It leverages association rule mining to recommend HTML tags based on your coding patterns and offers a comprehensive code analytics dashboard.
 
 ## Table of Contents
 
