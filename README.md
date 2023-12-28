@@ -40,12 +40,16 @@ Follow these steps to install the Auto Design Generator extension from the Visua
 If you want to test the extension locally, follow these steps:
 
 1. Clone this repository to your local machine.
+   
 `git clone https://github.com/MuneebMuhammad/auto-design-generator.git`
-2. Open Visual Studio Code.
-3. Install the required dependencies by running the following command in the terminal within the cloned repository folder:
+
+3. Open Visual Studio Code.
+4. Install the required dependencies by running the following command in the terminal within the cloned repository folder:
+   
 `pip install -r requirements.txt`
-4. Open the project in debug mode by pressing F5 or using the "Run and Debug" option in Visual Studio Code.
-5. You can now test the extension locally by opening an HTML file and utilizing its features.
+
+6. Open the project in debug mode by pressing F5 or using the "Run and Debug" option in Visual Studio Code.
+7. You can now test the extension locally by opening an HTML file and utilizing its features.
 
 Note: Local installation is recommended for testing and development purposes. For production use, consider the public installation method from the Visual Studio Code Marketplace
 
