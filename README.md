@@ -26,6 +26,29 @@ Before you can use this extension, ensure that you have the following prerequisi
 
 ### Installation
 
+#### Public Installation
+
+Follow these steps to install the Auto Design Generator extension from the Visual Studio Code Marketplace:
+
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for "Auto Design Generator" in the Extensions view search box.
+4. Click the Install button for the "Auto Design Generator" extension.
+
+#### Local Installation (For Testing)
+
+If you want to test the extension locally, follow these steps:
+
+1. Clone this repository to your local machine.
+`git clone https://github.com/MuneebMuhammad/auto-design-generator.git`
+2. Open Visual Studio Code.
+3. Install the required dependencies by running the following command in the terminal within the cloned repository folder:
+`pip install -r requirements.txt`
+4. Open the project in debug mode by pressing F5 or using the "Run and Debug" option in Visual Studio Code.
+5. You can now test the extension locally by opening an HTML file and utilizing its features.
+
+Note: Local installation is recommended for testing and development purposes. For production use, consider the public installation method from the Visual Studio Code Marketplace
+
 Follow these steps to install the Auto Design Generator extension:
 
 1. Open Visual Studio Code.
