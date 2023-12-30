@@ -139,11 +139,7 @@ def create_link_analysis(soup):
     nx.draw(G, pos, with_labels=True, font_weight='bold')
     plt.title("Network of Internal and External Links")
     st.pyplot(plt)
-    
-# def create_dom_tree(html_content):
-#     # This is a placeholder for DOM tree visualization
-#     # DOM tree visualization is quite complex and would require a significant custom implementation
-#     st.text("DOM Tree Visualization (To be implemented)")
+
 
 # Streamlit UI
 
@@ -159,7 +155,6 @@ def main():
 
         st.title("HTML File Analysis Dashboard")
 
-        #file_path = st.text_input("Enter the path of your HTML file:")
 
         if file_path:
             tags, attributes, text, classes_and_ids, script_types = parse_html(file_path)
@@ -170,9 +165,6 @@ def main():
             st.header("HTML Attribute Frequency")
             create_histogram(attributes, "Frequency of HTML Attributes", "Attributes")
             
-            # st.header("Heatmap of Tag and Attribute Frequencies")
-            # heatmap_data = parse_html_for_heatmap(file_path)
-            # create_heatmap(heatmap_data)
 
             st.header("Most Used Classes and IDs")
             create_histogram(classes_and_ids, "Frequency of Classes and IDs", "Classes/IDs")
@@ -182,14 +174,6 @@ def main():
             
             st.header("Word Cloud of HTML Content")
             create_wordcloud(text)
-
-            # st.header("Script Types in HTML")
-            # create_histogram(script_types, "Frequency of Script Types", "Script Types")    
-            
-            # Link Analysis
-            #st.header("Cooccurence Matrix")
-            #create_attribute_cooccurrence_matrix(BeautifulSoup(open(file_path, 'r', encoding='utf-8').read(), 'lxml'))
-
 
     else:
         st.error("No file path provided. Please run the script with a file path.")
